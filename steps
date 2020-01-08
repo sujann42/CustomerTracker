@@ -1,0 +1,44 @@
+STEPS:
+1) Add server
+2) Add mysql connector jar file
+   [mysql-connector-java8.0.12.jar]
+2) create a connection class and set up the connection and test it.
+3) Add jars for jsp and servlet
+[javax.servlet.jsp.jstl-1.2.1.jar & javax.servlet.jsp.jstl-1.2.1.jar ]
+4) Add spring jars.
+5) Add Hibernate jars: from both optional and required folders. {I have it stored on Documents folder}
+6) Download and copy following jar files into the lib folder.
+   [javax.activation-1.2.0.jar, jaxb-api-2.3.0.jar, jaxb-core-2.3.0.jar, jaxb-impl-2.3.0.jar]
+7) Define database dataSource/connection pool
+8) Set up Hibernate session factory
+9) Set up Hibernate transaction manager
+10) Enable configuration of transactional annotations.
+11) Configure the spring-mvc-crud-demo-servlet.xml file
+12) Define POJO class
+13) Define DAO class
+14) 
+15)
+16)
+
+
+**) What is a DAO class?
+Ans:-> A helper class that talks with the database using Hibernate API. 
+**) What is an entity class?
+Ans:-> A class that is mapped to the database.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+**) What is @Transactional annotation?
+Ans:-> Automagically begins and ends a transaction for the Hibernate code... no need to explicitly do this in your code.
+
+[session.beginTransaction();
+session.getTransaction().commit() does not need to be done. ] Spring will do it internally if you use @Transaction.
+
+@Transactional
+public List<Customer> getCustomers(){
+	Session ss = sessionFactory.getCurrentSession();
+	Query<Customer> theQuery = ss.createQuery("from Customer", Customer.class);
+	//get Result Set
+	List<Customer> customers = theQUery.getResultList();
+	
+	return customers;
+}
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

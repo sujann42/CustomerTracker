@@ -17,9 +17,11 @@ STEPS:
 12) Define POJO class
 13) Define DAO class
 14) Create a new package for DAO
-15)
-16)
-
+15) create a resource folder under webINF and store css or javascript files under it
+16) Tell Spring MVC that you have a file under resources folder.
+ [<mvc:resources location="/resources" mapping="/resources/**"></mvc:resources>]
+17) Create an index.jsp file under WebContent folder.
+[[[<% response.sendRedirect("customer/list"); %>]]]
 
 **) What is a DAO class?
 Ans:-> A helper class that talks with the database using Hibernate API. 

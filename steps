@@ -16,7 +16,7 @@ STEPS:
 11) Configure the spring-mvc-crud-demo-servlet.xml file
 12) Define POJO class
 13) Define DAO class
-14) 
+14) Create a new package for DAO
 15)
 16)
 
@@ -42,3 +42,9 @@ public List<Customer> getCustomers(){
 	return customers;
 }
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+@Repository -> DAO Implementations - spring will automatically  register DAO implementations. Spring also provides translation of 
+any JDBC related exceptions. Any checked exceptions that will be thrown, spring will translate those to unchecked exceptions.
+@Component -> Java Beans
+@Controller -> Spring MVC

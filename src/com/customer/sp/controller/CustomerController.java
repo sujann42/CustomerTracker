@@ -58,14 +58,51 @@ public class CustomerController {
 	// Getting the form to update the info existing in the database
 	@GetMapping("/showFormForUpdate")
 	public String showFormForUpdate(@RequestParam("customerId") int theId, Model theModel) {
-		
-		//Getting customers from the service
+
+		// Getting customers from the service
 		Customer theCustomer = customerService.getCustomerForUpdate(theId);
-		
-		//Set customer as a model attribute to populate the form
+
+		// Set customer as a model attribute to populate the form
 		theModel.addAttribute("customer", theCustomer);
 
 		return "customer-form";
 
 	}
+
+	// Deleting a customer
+	@GetMapping("/delete")
+	public String deleteCustomer(@RequestParam("customerId") int theId) {
+
+		customerService.deleteCustomer(theId);
+		return "redirect:/customer/list";
+
+	}
+	
+	//Searching customers by name
+	@GetMapping("/search")
+	public String searchCustomers(@RequestParam("theSearchName") String theSearchName, Model theModel) {
+		
+		//Search customers from the service
+		List<Customer> theCustomers = customerService.searchCustomers(theSearchName);
+		
+		//Add customers to the model
+		theModel.addAttribute("customers", theCustomers);
+		
+		return "list-customers";
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -22,6 +22,10 @@ STEPS:
  [<mvc:resources location="/resources" mapping="/resources/**"></mvc:resources>]
 17) Create an index.jsp file under WebContent folder and redirect it to the page that displays all customers.
 [[[<% response.sendRedirect("customer/list"); %>]]]
+18) This will display a confirm dialouge to make sure we want to perform this delete.
+   <a href="${deleteLink}" onclick="if(!(confirm('Are you sure you want to delete this customer?'))) return false">Delete</a>
+
+
 
 **) What is a DAO class?
 Ans:-> A helper class that talks with the database using Hibernate API. 

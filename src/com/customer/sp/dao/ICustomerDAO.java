@@ -9,4 +9,8 @@ public interface ICustomerDAO {
 	public void saveCustomer(Customer theCustomer);
 
 	public Customer getCustomerForUpdate(int theId);
+
+	public void deleteCustomer(int theId);
+
+	public List<Customer> searchCustomers(String theSearchName);
 }

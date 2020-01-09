@@ -20,7 +20,7 @@ STEPS:
 15) create a resource folder under webINF and store css or javascript files under it
 16) Tell Spring MVC that you have a file under resources folder.
  [<mvc:resources location="/resources" mapping="/resources/**"></mvc:resources>]
-17) Create an index.jsp file under WebContent folder.
+17) Create an index.jsp file under WebContent folder and redirect it to the page that displays all customers.
 [[[<% response.sendRedirect("customer/list"); %>]]]
 
 **) What is a DAO class?
